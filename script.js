@@ -186,7 +186,7 @@ function showFeedbackSymbol(response) {
   }, FEEDBACK_DISPLAY_TIME);
 }
 
-screen.orientation.lock("landscape");
+// screen.orientation.lock("landscape");
 
 document
   .getElementById("startGameButton")
