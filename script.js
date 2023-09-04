@@ -1,7 +1,7 @@
 const RIGHT_HEN_SRC = "images/chicken_left.jpg";
 const LEFT_HEN_SRC = "images/chicken_right.jpg";
 const INVERSION_PROBABLITY = 0.55;
-const HEN_DISPLAY_TIME = 1500;
+const HEN_DISPLAY_TIME = 1000;
 const MINIMUM_DISPLAY_TIME = 200;
 const FEEDBACK_DISPLAY_TIME = 300;
 
@@ -15,7 +15,6 @@ var score = 0;
 var lives = 3;
 let timerInterval; // Variable to store the timer interval
 let secondsLeft = 60;
-
 
 function tryInvertHen() {
   // Probablity to invert
@@ -186,6 +185,8 @@ function showFeedbackSymbol(response) {
     loopGame();
   }, FEEDBACK_DISPLAY_TIME);
 }
+
+screen.orientation.lock("landscape");
 
 document
   .getElementById("startGameButton")
