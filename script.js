@@ -1,13 +1,12 @@
 const RIGHT_HEN_SRC = "images/chicken_left.jpg";
 const LEFT_HEN_SRC = "images/chicken_right.jpg";
-const INVERSION_PROBABLITY = 0.55;
+const INVERSION_PROBABLITY = 0.25;
 const HEN_DISPLAY_TIME = 1000;
-const MINIMUM_DISPLAY_TIME = 200;
-const FEEDBACK_DISPLAY_TIME = 300;
+const MINIMUM_DISPLAY_TIME = 400;
+const FEEDBACK_DISPLAY_TIME = 200;
 
 const images = document.querySelectorAll("img");
 const imageList = [LEFT_HEN_SRC, RIGHT_HEN_SRC];
-const questionContainer = document.getElementById("question-container");
 const feedbackContainer = document.getElementById("feedback-container");
 const timer = document.getElementById("timerDiv");
 
@@ -16,8 +15,10 @@ var score = 0;
 var lives = 3;
 let timerInterval; // Variable to store the timer interval
 let secondsLeft = 60;
+let roundNumber = 0;
 
 function tryInvertHen() {
+  roundNumber++;
   // Probablity to invert
   if (Math.random() < INVERSION_PROBABLITY) {
     if (Math.random() > 0.5) {
@@ -113,25 +114,21 @@ function loopGame() {
 function askQuestion() {
   // hide all hens
   showImages(false);
-  // Display Q and options
-  questionContainer.setAttribute("style", "display: block");
 }
 
 function showImages(shouldShow) {
+  let imageContainer = document.getElementsByClassName("images-container")[0];
   if (shouldShow) {
-    // randomImg = imageList[Math.floor(Math.random() * imageList.length)];
-    images.forEach(function (image) {
-      // image.src = randomImg;
-      image.style.display = "block";
-    });
+    imageContainer.style.display = "flex";
   } else {
-    images.forEach(function (image) {
-      image.style.display = "none";
-    });
+    imageContainer.style.display = "none";
   }
 }
-
+let finishedrounds = [];
 function answer(response) {
+  if (finishedrounds.includes(roundNumber)) {
+    return;
+  }
   if (!response == hensNotSame) {
     // answer correct
     score += 10;
@@ -142,7 +139,7 @@ function answer(response) {
     removeLife();
     showFeedbackSymbol(false);
   }
-
+  finishedrounds.add(roundNumber);
   updateScreen();
 }
 
@@ -171,7 +168,6 @@ function restartGame() {
 
 function gameOver() {
   // clear bg
-  questionContainer.setAttribute("style", "display: none");
   timer.setAttribute("style", "visibility: hidden");
 
   // show gameover
@@ -184,7 +180,6 @@ function gameOver() {
 function showFeedbackSymbol(response) {
   feedbackContainer.setAttribute("style", "display: block");
   showImages(false);
-  questionContainer.setAttribute("style", "display: none");
   if (response) {
     feedbackContainer.textContent = "✔️";
     feedbackContainer.classList.add("tick-symbol");

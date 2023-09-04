@@ -41,10 +41,10 @@ p {
 
 /* LAYOUT */
 .col {
-  max-height: 100vh !important;
+  max-height: 80vh !important;
 }
 
-.col-4 img {
+.col img {
   display: block;
   height: 25vh;
   margin: auto;
@@ -52,53 +52,44 @@ p {
 
 /* Mobile devices (less than 768px wide) */
 @media (max-width: 767px) {
-  .col-4 img {
+  .col img {
     height: 15vh;
   }
 }
 
 /* iPads and tablets (768px to 1024px wide) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .col-4 img {
+  .col img {
     height: 20vh;
   }
 }
 
 /* Laptops and larger screens (greater than 1024px wide) */
 @media (min-width: 1025px) {
-  .col-4 img {
+  .col img {
     height: 25vh;
   }
 }
 
 #game-container {
-    height: 100%;
+    height: 90%;
     width: 100%;
 }
 
 .images-container {
-    height: 100%;
+    height: 70%;
     width: 100%;
 }
 
-#question-container {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: none;
+.answer-btn {
+    margin-right: 30px;
 }
 
-#question-container div {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-left: -100px; /* half width*/
-  margin-top: -300px; /* half height*/
-}
 
-#question-container div p {
-  margin-bottom: 20px;
+.btn-container {
+    z-index: 10000;
+    position: fixed;
+    bottom: 20px;
 }
 
 /* lIFE */
