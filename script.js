@@ -71,6 +71,7 @@ function invertOneHenCol() {
 }
 
 function startGame() {
+  lock();
   // show hen images
   showImages(true);
 
@@ -186,7 +187,13 @@ function showFeedbackSymbol(response) {
   }, FEEDBACK_DISPLAY_TIME);
 }
 
-// screen.orientation.lock("landscape");
+function lock() {
+  let de = document.documentElement;
+  if (de.requestFullscreen) {
+    de.requestFullscreen();
+  }
+  screen.orientation.lock("landscape");
+}
 
 document
   .getElementById("startGameButton")
