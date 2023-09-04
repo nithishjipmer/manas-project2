@@ -1,0 +1,130 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+p {
+  margin: 0;
+}
+
+/* NAVBAR */
+
+.navbar-brand-centered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rounded-rectangle {
+  background-color: white;
+  border-radius: 20px; /* Adjust the radius as needed */
+  padding: 5px 15px; /* Adjust padding as needed */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center;
+}
+
+.navbar-text p {
+  color: black;
+}
+
+/* START-GAME-BUTTON */
+#startGameButton {
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  z-index: 100;
+}
+
+/* LAYOUT */
+.col {
+  max-height: 100vh !important;
+}
+
+.col img {
+  display: block;
+  /* to adjust the height of nav bar we are using 3.2 */
+  height: calc(100% / 3.2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#question-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+#question-container div {
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -100px; /* half width*/
+  margin-top: -300px; /* half height*/
+}
+
+#question-container div p {
+  margin-bottom: 20px;
+}
+
+/* lIFE */
+.heart-icon {
+  font-size: 24px;
+  color: #edb1f2;
+}
+
+.lost-life {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* TIMER */
+.floating-div {
+  position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom as needed */
+  right: 20px; /* Adjust the distance from the right as needed */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 50%; /* Make it circular */
+  width: 60px; /* Set the width (adjust as needed) */
+  height: 60px; /* Set the height (adjust as needed) */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-size: 24px;
+}
+
+/* USER FEEDBACK */
+#feedback-container {
+  font-size: 36px;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.tick-symbol {
+  color: green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.wrong-symbol {
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
