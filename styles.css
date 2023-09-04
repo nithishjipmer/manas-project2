@@ -44,12 +44,41 @@ p {
   max-height: 100vh !important;
 }
 
-.col img {
+.col-4 img {
   display: block;
-  /* to adjust the height of nav bar we are using 3.2 */
-  height: calc(100% / 3.2);
-  margin-left: auto;
-  margin-right: auto;
+  height: 25vh;
+  margin: auto;
+}
+
+/* Mobile devices (less than 768px wide) */
+@media (max-width: 767px) {
+  .col-4 img {
+    height: 15vh;
+  }
+}
+
+/* iPads and tablets (768px to 1024px wide) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .col-4 img {
+    height: 20vh;
+  }
+}
+
+/* Laptops and larger screens (greater than 1024px wide) */
+@media (min-width: 1025px) {
+  .col-4 img {
+    height: 25vh;
+  }
+}
+
+#game-container {
+    height: 100%;
+    width: 100%;
+}
+
+.images-container {
+    height: 100%;
+    width: 100%;
 }
 
 #question-container {
@@ -61,8 +90,6 @@ p {
 }
 
 #question-container div {
-  width: 300px;
-  height: 600px;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -119,7 +146,7 @@ p {
   color: green;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 48%;
 }
 
 .wrong-symbol {
@@ -129,4 +156,18 @@ p {
   left: 50%;
 }
 
-
+/* GAME OVER */
+.game-over {
+  width: 80vw;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 9999;
+  text-align: center;
+}

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/chicken_left.jpg">
-    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,6 +25,7 @@
             -> increase speed gradually
             -> Immediate feedback
             Responsive
+            Convert to png
             Styling
             Write about principle of game in improving impulse control
             Levels
@@ -50,22 +50,11 @@
         </div>
     </nav>
 
-    <!-- Game Over Modal -->
-    <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="gameOverModalLabel">Game Over</h5>
-                </div>
-                <div class="modal-body">
-                    <p>Your Score: <span id="scoreValue">0</span></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+    <!-- Game Over -->
+    <div id="gameOverDiv" class="game-over">
+        <h1>Game Over</h1>
+        <p>Your Score: <span id="scoreDisplay">0</span></p>
+        <button class="btn btn-primary" onclick="restartGame()">Restart</button>
     </div>
 
     <!-- User Feedback -->
@@ -84,19 +73,20 @@
     </div>
 
     <!-- Timer -->
-    <div id="timerDiv" class="floating-div" style="display: none;">
+    <div id="timerDiv" class="floating-div" style="visibility: hidden;">
         <p id="timer">60</p>
     </div>
 
     <!-- Game container -->
     <div id="game-container" class="d-flex align-items-center justify-content-center text-center">
-        <div class="row">
-            <div class="col">
+        <div class="row images-container">
+            <div class="col-4 align-self-center">
                 <img class="left" src="images/chicken_right.jpg" alt="">
                 <img class="left" src="images/chicken_right.jpg" alt="">
                 <img class="left" src="images/chicken_right.jpg" alt="">
             </div>
-            <div class="col">
+            <div class="col-4"></div>
+            <div class="col-4  align-self-center">
                 <img class="right" src="images/chicken_right.jpg" alt="">
                 <img class="right" src="images/chicken_right.jpg" alt="">
                 <img class="right" src="images/chicken_right.jpg" alt="">

@@ -9,6 +9,7 @@ const images = document.querySelectorAll("img");
 const imageList = [LEFT_HEN_SRC, RIGHT_HEN_SRC];
 const questionContainer = document.getElementById("question-container");
 const feedbackContainer = document.getElementById("feedback-container");
+const timer = document.getElementById("timerDiv");
 
 var hensNotSame = false;
 var score = 0;
@@ -71,14 +72,7 @@ function invertOneHenCol() {
 }
 
 function startGame() {
-  lock();
-  // show hen images
-  showImages(true);
-
-  // hide question container
-  questionContainer.setAttribute("style", "display: none");
-
-  document.getElementById("timerDiv").style.display = "block";
+  timer.style.visibility = "visible";
   // Start the timer
   timerInterval = setInterval(function () {
     secondsLeft--;
@@ -93,6 +87,15 @@ function startGame() {
   setTimeout(askQuestion, 2000);
 }
 
+function resetGame() {
+  score = 0;
+  lives = 3;
+  secondsLeft = 60;
+  timer.style.visibility = "visible";
+  tryInvertHen();
+  setTimeout(askQuestion, 2000);
+}
+
 function returnDisplayTime() {
   let delta = HEN_DISPLAY_TIME - 2000 / secondsLeft;
   if (HEN_DISPLAY_TIME > 2000 / secondsLeft + MINIMUM_DISPLAY_TIME) {
@@ -103,7 +106,6 @@ function returnDisplayTime() {
 
 function loopGame() {
   // hide question container
-
   tryInvertHen();
   setTimeout(askQuestion, returnDisplayTime());
 }
@@ -159,12 +161,24 @@ function removeLife() {
   }
 }
 
-function gameOver() {
-  // Set the score in the modal
-  document.getElementById("scoreValue").textContent = score;
+// Function to restart the game
+function restartGame() {
+  const gameOverDiv = document.getElementById("gameOverDiv");
+  gameOverDiv.style.display = "none";
 
-  // Show the game over modal
-  $("#gameOverModal").modal("show");
+  resetGame();
+}
+
+function gameOver() {
+  // clear bg
+  questionContainer.setAttribute("style", "display: none");
+  timer.setAttribute("style", "visibility: hidden");
+
+  // show gameover
+  const gameOverDiv = document.getElementById("gameOverDiv");
+  const scoreDisplay = document.getElementById("scoreDisplay");
+  scoreDisplay.textContent = score;
+  gameOverDiv.style.display = "block";
 }
 
 function showFeedbackSymbol(response) {
@@ -182,18 +196,28 @@ function showFeedbackSymbol(response) {
     feedbackContainer.textContent = "";
     feedbackContainer.classList.remove("tick-symbol");
     feedbackContainer.setAttribute("style", "display: none");
-    showImages(true);
-    loopGame();
+
+    if (lives > 0) {
+      showImages(true);
+      loopGame();
+    }
   }, FEEDBACK_DISPLAY_TIME);
 }
 
-function lock() {
-  let de = document.documentElement;
-  if (de.requestFullscreen) {
-    de.requestFullscreen();
-  }
-  screen.orientation.lock("landscape");
-}
+// function lock() {
+//   if (
+//     navigator.userAgent.match(/Android/i) ||
+//     navigator.userAgent.match(/iPhone/i) ||
+//     navigator.userAgent.match(/BlackBerry/i) ||
+//     navigator.userAgent.match(/Windows Phone/i)
+//   ) {
+//     let de = document.documentElement;
+//     if (de.requestFullscreen) {
+//       de.requestFullscreen();
+//     }
+//     screen.orientation.lock("landscape");
+//   }
+// }
 
 document
   .getElementById("startGameButton")
