@@ -37,9 +37,13 @@ body {
 /* ========HOME PAGE=========== */
 
 /* hero */
-.hero div div h1, h6 {
+.hero-section div div h1, h6 {
   color: white;
   text-shadow: 2px 2px #8a8a8a;
+}
+
+.hero-section {
+  margin-bottom: 30px;
 }
 
 .cta-btn {
@@ -55,8 +59,20 @@ body {
   height: 65vh;
 }
 
+/* tools section */
+.tools-section img {
+  width: 80%;
+  max-width: 200px;
+  border-radius: 50%;
+  /* border: 2px solid #53939C; */
+  padding:10px;
+}
 
-/* content */
+.tools-section {
+  margin-top: 30px;
+}
+
+/* content section*/
 .listar-feature-item-wrapper {
   margin-bottom: 120px;
   padding-left: 27px;
