@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/chicken_right.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Kokorakoo</title>
+</head>
+
+<!-- 
+            -> get a nice chicken img and its inversion
+            -> two col with 3 chicken each
+            -> write a function to invert a chicken 15% probablity
+            -> navbar
+            -> screen shift to Q after 1.5sec
+            -> depending on response add score or remove life
+            -> Count and display score
+            -> 1min Timer
+            -> Display final score
+            -> increase speed gradually
+            -> Immediate feedback
+            Responsive
+            Convert to png
+            Styling
+            Write about principle of game in improving impulse control
+            Levels
+            Tutorial
+            Comments
+        -->
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-centered" href="#">Kokorakoo</a>
+            <div class="mr-auto">
+                <i class="fas fa-heart heart-icon"></i>
+                <i class="fas fa-heart heart-icon"></i>
+                <i class="fas fa-heart heart-icon"></i>
+            </div>
+            <div class="navbar-text ml-auto rounded-rectangle">
+                <p class="m-0">
+                    Score: <span id="score">0</span>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Over -->
+    <div id="gameOverDiv" class="game-over">
+        <h1>Game Over</h1>
+        <p>Your Score: <span id="scoreDisplay">0</span></p>
+        <button class="btn btn-primary" onclick="restartGame()">Restart</button>
+    </div>
+
+    <!-- User Feedback -->
+    <div id="feedback-container" style="display: none;"></div>
+
+    <!-- Start game btn -->
+    <button id="startGameButton" class="btn btn-primary"><i class="fas fa-play"></i>&nbsp;&nbsp;Play</button>
+
+    <!-- Question container -->
+    <!-- <div id="question-container">
+        <p>Are the chickens same on both sides?</p>
+    </div> -->
+
+    <!-- Timer -->
+    <div id="timerDiv" class="floating-div" style="visibility: hidden;">
+        <p id="timer">60</p>
+    </div>
+
+    <!-- Game container -->
+    <div id="game-container" class="d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="row images-container">
+            <div class="col align-self-center">
+                <img class="left" src="../images/chicken_right.jpg" alt="">
+                <img class="left" src="../images/chicken_right.jpg" alt="">
+                <img class="left" src="../images/chicken_right.jpg" alt="">
+            </div>
+            <!-- <div class="col-4"></div> -->
+            <div class="col align-self-center">
+                <img class="right" src="../images/chicken_right.jpg" alt="">
+                <img class="right" src="../images/chicken_right.jpg" alt="">
+                <img class="right" src="../images/chicken_right.jpg" alt="">
+            </div>
+        </div>
+        <div class="btn-container">
+            <button onclick="answer(true)" class="btn btn-primary answer-btn">Yes</button>
+            <button onclick="answer(false)" class="btn btn-secondary answer-btn">No</button>
+        </div>
+
+    </div>
+
+    <script src="../JS/chicken_game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

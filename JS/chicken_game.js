@@ -1,5 +1,5 @@
-const RIGHT_HEN_SRC = "images/chicken_left.jpg";
-const LEFT_HEN_SRC = "images/chicken_right.jpg";
+const RIGHT_HEN_SRC = "../images/chicken_left.jpg";
+const LEFT_HEN_SRC = "../images/chicken_right.jpg";
 const INVERSION_PROBABLITY = 0.25;
 const HEN_DISPLAY_TIME = 1000;
 const MINIMUM_DISPLAY_TIME = 400;
@@ -15,7 +15,7 @@ var score = 0;
 var lives = 3;
 let timerInterval; // Variable to store the timer interval
 let secondsLeft = 60;
-let roundNumber = 0;
+
 
 function tryInvertHen() {
   roundNumber++;
@@ -124,11 +124,8 @@ function showImages(shouldShow) {
     imageContainer.style.display = "none";
   }
 }
-let finishedrounds = [];
 function answer(response) {
-  if (finishedrounds.includes(roundNumber)) {
-    return;
-  }
+
   if (!response == hensNotSame) {
     // answer correct
     score += 10;
@@ -139,7 +136,6 @@ function answer(response) {
     removeLife();
     showFeedbackSymbol(false);
   }
-  finishedrounds.add(roundNumber);
   updateScreen();
 }
 
