@@ -10,13 +10,16 @@ p {
 h1,
 h2,
 h3,
-h4,
-p {
+h4{
   font-family: "Signika", sans-serif;
 }
 
 html {
   overflow-x: hidden;
+}
+
+p {
+  font-size: medium;
 }
 
 /* Global Styles */
@@ -775,3 +778,57 @@ footer {
   margin-top: 10px;
   color: #A8CF58;
 }
+
+/* ==================== Read about Impulse control ========================== */
+
+
+.read-page-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.read-page-container p {
+  margin: 20px 0;
+}
+
+button.accordion {
+  width: 100%;
+  background-color: rgba(139, 213, 226, 0.4);
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+button.accordion:after {
+  font-family: FontAwesome;
+  content: "\f150";
+  font-family: "fontawesome";
+  font-size: 18px;
+  float: right;
+}
+
+button.accordion.is-open:after {
+  content: "\f151";
+}
+
+button.accordion:hover,
+button.accordion.is-open {
+  background-color: rgba(139, 213, 226, 1);
+}
+
+.accordion-content {
+  background-color: white;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
