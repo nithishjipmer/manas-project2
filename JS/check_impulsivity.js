@@ -216,7 +216,7 @@ var quizApp = function () {
     const resultMessage = `
     <div class="result-message">
     <img class='quiz-result-image' src='${resultImage}'>
-    <h3 class='res-header'>Impulsivity Level: ${impulsivityLevel}</h3>
+    <h3 class='res-header'>${impulsivityLevel}</h3>
     <h4 class='res-text'>Total Score: &nbsp;${scr}/${maxScore}</h4>
                          
     </div>
