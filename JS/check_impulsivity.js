@@ -218,7 +218,7 @@ var quizApp = function () {
     <img class='quiz-result-image' src='${resultImage}'>
     <h3 class='res-header'>${impulsivityLevel}</h3>
     <h4 class='res-text'>Total Score: &nbsp;${scr}/${maxScore}</h4>
-                         
+         <a href='../index.html'><button class='btn btn-success'>Home</button></a>                
     </div>
     `;
 
@@ -256,14 +256,14 @@ $(document).ready(function () {
 
 $("#next").click(function (e) {
   e.preventDefault();
-   if ($("input[type=radio][name=option]:checked").length > 0) {
-     var selectedopt = $("input[type=radio][name=option]:checked").val();
-     jsq.checkAnswer(selectedopt);
-     $("input[type=radio][name=option]").prop("checked", false);
-     jsq.changeQuestion(1);
-   } else {
-     alert("Please answer this question to proceed");
-   }
+  if ($("input[type=radio][name=option]:checked").length > 0) {
+    var selectedopt = $("input[type=radio][name=option]:checked").val();
+    jsq.checkAnswer(selectedopt);
+    $("input[type=radio][name=option]").prop("checked", false);
+    jsq.changeQuestion(1);
+  } else {
+    alert("Please answer this question to proceed");
+  }
 });
 
 $("#previous").click(function (e) {

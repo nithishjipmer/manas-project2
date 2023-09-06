@@ -10,7 +10,7 @@ p {
 h1,
 h2,
 h3,
-h4{
+h4 {
   font-family: "Signika", sans-serif;
 }
 
@@ -66,7 +66,7 @@ h6 {
 /* quote of the day */
 .quote-container {
   width: 100%;
-  
+
   @media (min-width: 1200px) {
     margin-bottom: 10vh;
   }
@@ -80,7 +80,7 @@ h6 {
   }
 }
 .quote-bubble {
-  background-color: #659C41;
+  background-color: #659c41;
   max-width: 400px;
   padding: 20px 20px;
   border-radius: 20px;
@@ -104,7 +104,6 @@ h6 {
 .tools-section {
   margin-top: 30px;
 }
-
 
 .tool-label {
   font-weight: 300;
@@ -758,7 +757,6 @@ footer {
 
 /*========== QUIZ ====================== */
 
-
 .quiz-page-body {
   background-image: url("./images/hero_image.jpg");
   background-position: center;
@@ -807,11 +805,10 @@ footer {
 
 .res-header {
   margin-top: 10px;
-  color: #A8CF58;
+  color: #a8cf58;
 }
 
 /* ==================== Read about Impulse control ========================== */
-
 
 .read-page-container {
   width: 80%;
@@ -877,14 +874,24 @@ button.accordion.is-open {
 }
 
 .countdown-card {
-  width: 70vw;
+  width: 90vw;
   background-color: white;
   border-radius: 20px;
   padding: 30px;
+  max-width: 500px;
 }
 
 #startButton {
   margin-top: 20px;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 100%;
 }
 
 /* timer animation */
@@ -947,7 +954,7 @@ button.accordion.is-open {
   visibility: hidden;
   min-width: 200px;
   margin-left: -125px;
-  background-color: #2B5F6C; 
+  background-color: #2b5f6c;
   color: #fff;
   text-align: center;
   border-radius: 2px;
@@ -964,7 +971,6 @@ button.accordion.is-open {
   margin-top: 2px;
 }
 
-
 #simpleToast.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -972,23 +978,78 @@ button.accordion.is-open {
 }
 
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 35px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 35px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 35px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 35px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 35px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 35px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 35px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 35px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 
+/* MEDITATION PAGE */
+.meditation-page img {
+  width: 20vw;
+  margin: auto;
+  display: block;
+}
+
+#player-container #play-pause {
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  text-indent: -999999px;
+  height:50px;
+  width: 50px;
+  padding: 12px 18px;
+  z-index: 2;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
+    background-repeat: no-repeat!important;
+    background-position: center;
+    background-size: 16px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:20px;
+  background-color: gainsboro;
+}
+.play {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMiAyNHYtMjRsMjAgMTItMjAgMTJ6Ii8+PC9zdmc+);
+}
+.pause {
+   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTAgMjRoLTZ2LTI0aDZ2MjR6bTEwLTI0aC02djI0aDZ2LTI0eiIvPjwvc3ZnPg==)!important;
+}
