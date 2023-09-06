@@ -37,13 +37,14 @@ body {
 /* ========HOME PAGE=========== */
 
 /* hero */
-.hero-section div div h1, h6 {
+.hero-section div div h1,
+h6 {
   color: white;
   text-shadow: 2px 2px #8a8a8a;
 }
 
 .hero-section {
-  margin-bottom: 30px;
+  margin-bottom: 10vh;
 }
 
 .cta-btn {
@@ -63,13 +64,27 @@ body {
 .tools-section img {
   width: 80%;
   max-width: 200px;
-  border-radius: 50%;
-  /* border: 2px solid #53939C; */
-  padding:10px;
+  padding: 10px;
 }
 
 .tools-section {
   margin-top: 30px;
+}
+
+.tool-label {
+  font-weight: 300;
+  color: #252525;
+  @media (min-width: 1200px) {
+    font-size: 1.8vw;
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    font-size: 3vw;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 3vw;
+  }
 }
 
 /* content section*/
@@ -430,8 +445,18 @@ body {
 }
 
 .pset {
-  padding-top: 180px;
   padding-bottom: 80px;
+  @media (min-width: 1200px) {
+    padding-top: 25vh;
+  }
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+    padding-top: 15vh;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 15vh;
+  }
 }
 
 .listar-feature-with-image .listar-feature-item a:before {
@@ -693,4 +718,57 @@ footer {
   padding: 20px;
   z-index: 9999;
   text-align: center;
+}
+
+/*========== QUIZ ====================== */
+
+
+.quiz-page-body {
+  background-image: url("./images/hero_image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.form-group h4 {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.content {
+  margin-top: 54px;
+  height: 100%;
+}
+
+.quiz-body {
+  margin-top: 15px;
+  padding-bottom: 50px;
+}
+.option-block-container {
+  margin-top: 20px;
+  max-width: 420px;
+}
+.option-block {
+  width: 30vw;
+  margin-left: 30px;
+  padding: 10px 0 10px 30px;
+  background: aliceblue;
+  border: 1px solid #84c5fe;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.quiz-result-image {
+  width: 15vw;
+}
+
+.result-message {
+  margin: 0 20%;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.res-header {
+  margin-top: 10px;
 }
