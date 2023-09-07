@@ -132,12 +132,6 @@ h6 {
   text-decoration: none;
 }
 
-.tool-label {
-  font-weight: 300;
-  margin-bottom: 10px;
-  color: #252525;
-  
-}
 
 #tools_wrap {
   margin: auto;
@@ -662,7 +656,7 @@ footer {
 }
 
 footer p{
-  font-size: small;
+  font-size: smaller;
   font-weight: lighter;
 }
 
@@ -883,6 +877,31 @@ footer p{
   color: #a8cf58;
 }
 
+
+
+
+.quiz-progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 20px;
+	width: 90%;
+  margin: auto;
+}
+
+.progress-done {
+	background: linear-gradient(to left, #0ca22c, #218838);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
+}
+
 /* ==================== Read about Impulse control ========================== */
 
 .read-page-container {
@@ -971,6 +990,9 @@ button.accordion.is-open {
   max-width: 500px;
 }
 
+#startButton {
+  margin-top: 20px;
+}
 
 textarea {
   -webkit-box-sizing: border-box;

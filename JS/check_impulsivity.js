@@ -1,19 +1,4 @@
-const points = {
-  "Very Likely": 5,
-  "Very Often": 5,
-  Always: 5,
-  "Whenever I feel like it": 5,
-  Likely: 4,
-  Often: 4,
-  "After a few hours": 4,
-  Sometimes: 3,
-  Occasionally: 3,
-  "Within an hour": 3,
-  Rarely: 2,
-  "Within a few minutes": 2,
-  Never: 1,
-  Immediately: 1,
-};
+const progress = document.querySelector(".progress-done");
 
 var quiz = {
   JS: [
@@ -258,6 +243,11 @@ var quizApp = function () {
     this.currentque = this.currentque + cque;
     this.displayQuiz(this.currentque);
   };
+
+  this.showProgress = function () {
+    progress.style.width = (quiz.JS[this.currentque].id / quiz.JS.length) * 100 + "%";
+    progress.style.opacity = 1;
+  };
 };
 
 var jsq = new quizApp();
@@ -284,6 +274,7 @@ $("#next").click(function (e) {
     jsq.checkAnswer(selectedopt);
     $("input[type=radio][name=option]").prop("checked", false);
     jsq.changeQuestion(1);
+    jsq.showProgress();
   } else {
     alert("Please answer this question to proceed");
   }
