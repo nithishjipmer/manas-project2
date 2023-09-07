@@ -121,17 +121,7 @@ h6 {
   font-weight: 300;
   margin-bottom: 10px;
   color: #252525;
-  @media (min-width: 1200px) {
-    font-size: 1.8vw;
-  }
-
-  @media (min-width: 768px) and (max-width: 1199px) {
-    font-size: 3vw;
-  }
-
-  @media (max-width: 767px) {
-    font-size: 3vw;
-  }
+  
 }
 
 #tools_wrap {
@@ -161,7 +151,7 @@ h6 {
   background: rgba(37, 139, 213, 1);
 }
 
-/* audio button */
+/* home audio button */
 .home-audio #play-pause {
   margin: auto;
   border-radius: 50%;
@@ -169,7 +159,7 @@ h6 {
   height: 50px;
   width: 50px;
   padding: 12px 18px;
-  z-index: 2;
+  z-index: 2000 !important;
   background-color: green !important;
   color: white;
   position: fixed;
@@ -914,6 +904,12 @@ button.accordion.is-open {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-content img {
+  max-width: 200px;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
 /* ================ COUNTDOWN PAGE ======================== */

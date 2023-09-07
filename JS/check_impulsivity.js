@@ -19,127 +19,146 @@ var quiz = {
   JS: [
     {
       id: 1,
-      question:
-        "When faced with a tempting dessert, how likely are you to indulge in it?",
+      question: "I act on Impulse",
       options: [
         {
-          a: "Very Likely",
-          b: "Likely",
-          c: "Sometimes",
-          d: "Rarely",
-          e: "Never",
+          a: "Rarely / Never",
+          b: "Occasionally",
+          c: "Often",
+          d: "Always",
+        },
+        {
+          a: 1,
+          b: 2,
+          c: 3,
+          d: 4,
         },
       ],
       score: 0,
     },
     {
       id: 2,
-      question:
-        "How often do you make impulse purchases, such as buying items not on your shopping list?",
+      question: "I act on spur of the moment",
       options: [
-        {
-          a: "Very Often",
-          b: "Often",
-          c: "Occasionally",
-          d: "Rarely",
-          e: "Never",
-        },
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 3,
-      question:
-        "When you receive a text message or notification, how quickly do you check your phone?",
+      question: "I do things without thinking",
       options: [
-        {
-          a: "Immediately",
-          b: "Within a few minutes",
-          c: "Within an hour",
-          d: "After a few hours",
-          e: "Whenever I feel like it",
-        },
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 4,
-      question:
-        "Do you find it challenging to resist the urge to interrupt others during conversations?",
+      question: "I say things without thinking",
       options: [
-        { a: "Always", b: "Often", c: "Sometimes", d: "Rarely", e: "Never" },
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 5,
-      question:
-        "How often do you engage in impulsive behaviors like speeding while driving?",
+      question: "I buy things on impulse",
       options: [
-        {
-          a: "Very Often",
-          b: "Often",
-          c: "Occasionally",
-          d: "Rarely",
-          e: "Never",
-        },
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 6,
-      question:
-        "Are you prone to making impulsive decisions without considering the consequences?",
+      question: "I plan for job security",
       options: [
-        { a: "Always", b: "Often", c: "Sometimes", d: "Rarely", e: "Never" },
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 7,
-      question:
-        "How often do you find yourself procrastinating on important tasks until the last minute?",
+      question: "I plan for future",
       options: [
-        {
-          a: "Very Often",
-          b: "Often",
-          c: "Occasionally",
-          d: "Rarely",
-          e: "Never",
-        },
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 8,
-      question:
-        "When experiencing strong emotions like anger or frustration, do you tend to react impulsively?",
+      question: "I save regularly",
       options: [
-        { a: "Always", b: "Often", c: "Sometimes", d: "Rarely", e: "Never" },
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 9,
-      question:
-        "How likely are you to engage in impulsive eating when stressed or upset?",
+      question: "I plan tasks carefully",
       options: [
-        {
-          a: "Very Likely",
-          b: "Likely",
-          c: "Sometimes",
-          d: "Rarely",
-          e: "Never",
-        },
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
     {
       id: 10,
-      question:
-        "Do you often find it challenging to save money and avoid impulsive spending?",
+      question: "I am a careful thinker",
       options: [
-        { a: "Always", b: "Often", c: "Sometimes", d: "Rarely", e: "Never" },
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
+      ],
+      score: 0,
+    },
+    {
+      id: 11,
+      question: "I am restless at lectures",
+      options: [
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
+      ],
+      score: 0,
+    },
+    {
+      id: 12,
+      question: "I squirm at plays or lectures",
+      options: [
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
+      ],
+      score: 0,
+    },
+    {
+      id: 13,
+      question: "I concentrate easily",
+      options: [
+        { a: "Rarely / Never", b: "Occasionally", c: "Often", d: "Always" },
+        { a: 4, b: 3, c: 2, d: 1 },
+      ],
+      score: 0,
+    },
+    {
+      id: 14,
+      question: "I don't pay attention",
+      options: [
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
+      ],
+      score: 0,
+    },
+    {
+      id: 15,
+      question: "Easily bored solving thought problems",
+      options: [
+        { a: "Always", b: "Often", c: "Occassionally", d: "Rarely / Never" },
+        { a: 4, b: 3, c: 2, d: 1 },
       ],
       score: 0,
     },
@@ -196,18 +215,15 @@ var quizApp = function () {
     let impulsivityLevel;
     let resultImage;
 
-    if (scr <= 20) {
+    if (scr < 40) {
       impulsivityLevel = "Low Impulsivity";
       resultImage = "../images/low_impulsivity.png";
-    } else if (scr >= 21 && scr <= 30) {
+    } else if (scr >= 40 && scr <= 45) {
       impulsivityLevel = "Moderate Impulsivity";
       resultImage = "../images/moderate_impulsivity.png";
-    } else if (scr >= 31 && scr <= 40) {
+    } else if (scr >= 46) {
       impulsivityLevel = "High Impulsivity";
       resultImage = "../images/high_impulsivity.png";
-    } else if (scr >= 41 && scr <= 50) {
-      impulsivityLevel = "Very High Impulsivity";
-      resultImage = "../images/very_high_impulsivity.png";
     } else {
       impulsivityLevel = "Undefined";
       resultImage = "../images/very_high_impulsivity.png";
@@ -227,7 +243,14 @@ var quizApp = function () {
   };
 
   this.checkAnswer = function (option) {
-    quiz.JS[this.currentque].score = points[option];
+    var selectedKey;
+    for (var key in quiz.JS[this.currentque].options[0]) {
+      if (quiz.JS[this.currentque].options[0][key] == option) {
+        selectedKey = key;
+      }
+    }
+    quiz.JS[this.currentque].score =
+      quiz.JS[this.currentque].options[1][selectedKey];
     console.log(option);
   };
 
