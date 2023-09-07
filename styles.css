@@ -18,8 +18,22 @@ html {
   overflow-x: hidden;
 }
 
-p {
+p,li {
   font-size: medium;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+    width: 100px;
+}
+
+table {
+  margin: auto;
 }
 
 /* Global Styles */
@@ -647,15 +661,35 @@ footer {
   font-weight: bold;
 }
 
+footer p{
+  font-size: small;
+  font-weight: lighter;
+}
+
 /* ================CHICKEN GAME=================== */
 
 /* NAVBAR */
 
-.navbar-brand-centered {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+#progressBar {
+  width: 70%;
+  margin: 10px auto;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 10px;
 }
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #258bd5;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
 
 .rounded-rectangle {
   background-color: white;
@@ -672,10 +706,7 @@ footer {
 
 /* START-GAME-BUTTON */
 #startGameButton {
-  position: absolute;
-  top: 50%;
-  right: 45%;
-  z-index: 100;
+  background-color: #258bd5;
 }
 
 /* LAYOUT */
@@ -722,6 +753,9 @@ footer {
 
 .answer-btn {
   margin-right: 30px;
+  background-color: #258bd5;
+  width: 50px !important;
+  display: none;
 }
 
 .btn-container {
@@ -741,27 +775,6 @@ footer {
   color: gray;
 }
 
-/* TIMER */
-.floating-div {
-  position: fixed;
-  bottom: 20px; /* Adjust the distance from the bottom as needed */
-  right: 20px; /* Adjust the distance from the right as needed */
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ccc;
-  border-radius: 50%; /* Make it circular */
-  width: 60px; /* Set the width (adjust as needed) */
-  height: 60px; /* Set the height (adjust as needed) */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#timer {
-  font-size: 24px;
-}
 
 /* USER FEEDBACK */
 #feedback-container {
@@ -769,6 +782,7 @@ footer {
   height: 100%;
   width: 100%;
   z-index: 1000;
+  overflow-y: hidden !important;
 }
 
 .tick-symbol {
@@ -799,6 +813,21 @@ footer {
   padding: 20px;
   z-index: 9999;
   text-align: center;
+}
+
+.game-over img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.game-over button {
+  background-color: #258bd5;
+  margin-top: 20px;
+}
+
+#msg {
+  position: fixed;
+  bottom: 80px;
 }
 
 /*========== QUIZ ====================== */
@@ -866,6 +895,10 @@ footer {
   margin: 20px 0;
 }
 
+.read-page-container h5 {
+  margin: 30px 0;
+}
+
 button.accordion {
   width: 100%;
   background-color: rgba(139, 213, 226, 0.4);
@@ -912,6 +945,11 @@ button.accordion.is-open {
   border-radius: 10px;
 }
 
+.accordion-content h4 {
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
 /* ================ COUNTDOWN PAGE ======================== */
 
 .countdown-page {
@@ -933,9 +971,6 @@ button.accordion.is-open {
   max-width: 500px;
 }
 
-#startButton {
-  margin-top: 20px;
-}
 
 textarea {
   -webkit-box-sizing: border-box;
