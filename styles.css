@@ -40,7 +40,7 @@ table {
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: #f4f4f4;
+  background-color: rgb(244, 244, 244);
   min-height: calc(100vh - var(--vh-offset, 0px));
   overflow-x: hidden;
   font-weight: 400;
@@ -98,6 +98,7 @@ h6 {
   max-width: 400px;
   padding: 20px 20px;
   border-radius: 20px;
+  margin: 0 20px;
 }
 
 .quote-bubble h4 {
@@ -573,7 +574,6 @@ h6 {
   box-shadow: 10px 10px 40px rgba(80, 80, 80, 0.15),
     15px 15px 30px rgba(80, 80, 80, 0.05), 0 0 120px rgba(80, 80, 80, 0.6);
   bottom: -30px;
-  background-image: url("https://image.flaticon.com/icons/svg/2316/2316674.svg");
   background-size: 40%;
   color: #555;
   line-height: 52px;
@@ -656,7 +656,7 @@ footer {
   margin-top: 15vh;
   text-align: center;
   padding: 20px 0;
-  background-color: #53939c;
+  background-color: rgb(83, 147, 156);
   color: #fff;
   font-weight: bold;
 }
