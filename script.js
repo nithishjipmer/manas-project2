@@ -144,3 +144,9 @@ function displayQuote() {
 }
 
 displayQuote();
+
+jQuery(document).ready(function ($) {
+  $("#tools_wrap_toggle").click(function () {
+    $("#tools_wrap").slideToggle("slow");
+  });
+});

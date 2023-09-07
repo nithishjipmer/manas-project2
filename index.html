@@ -13,6 +13,7 @@ green #A8CF58
     <link rel="icon" type="image/x-icon" href="./images/meditation.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +39,7 @@ green #A8CF58
             <p id="quote"></p>
         </div>
     </div>
-    
+
 
 
 
@@ -107,7 +108,7 @@ green #A8CF58
 
                                     <div class="listar-feature-item-title listar-feature-counter-added">
                                         <span><span>02</span>
-                                            Know about your Impulsivity </span>
+                                            Assess your Impulsivity </span>
                                     </div>
 
                                     <div class="listar-feature-item-excerpt">
@@ -125,38 +126,68 @@ green #A8CF58
         </div>
     </div>
     <!-- Tools section -->
-    <h2 class="text-center">Practice Impulse Control</h2>
-    <div class="row tools-section text-center" id="tools-target">
-        <div class="col-4">
+    <div>
+        <a href="#0" id="tools_wrap_toggle">
+            <h4>03 Improve your Impulse Control</h4>
+        </a>
+    </div>
+    <div id="tools_wrap" style="display: none;">
+        <div class="tools-section text-center" id="tools-target">
             <a href="./html/countdown.html">
-                <img src="images/clock.png" alt="">
-                <p class="tool-label">Countdown</p>
+                <div class="row">
+                    <div class="col-4"><img src="images/clock.png" alt=""></div>
+                    <div class="col-8">
+                        <h4 class="tool-label">Impulse Insight</h4>
+                        <p>Take a moment to disconnect from the real world. Clear your mind and spend a minute
+                            reflecting on your current impulse
+                            and its potential consequences.</p>
+                    </div>
+                </div>
             </a>
-
-
-        </div>
-        <div class="col-4">
             <a href="./html/chicken_game.html">
-                <img src="images/game.png" alt="">
-                <p class="tool-label">Game</p>
-            </a>
+                <div class="row">
+                    <div class="col-4"><img src="images/game.png" alt=""></div>
+                    <div class="col-8">
+                        <h4 class="tool-label">Game to Improve Impulse Control</h4>
+                        <p>Enhance your impulse control skills while having fun.</p>
+                    </div>
+                </div>
 
-        </div>
-        <div class="col-4">
+
+            </a>
             <a href="./html/meditation.html">
-                <img src="images/meditation.png" alt="">
-                <p class="tool-label">Meditation</p>
+                <div class="row">
+                    <div class="col-4"><img src="images/meditation.png" alt=""></div>
+                    <div class="col-8">
+                        <h4 class="tool-label">Meditation</h4>
+                        <p>Meditation fosters mindfulness, enabling you to pause, observe impulses without judgment, and
+                            respond thoughtfully,
+                            rather than react impulsively.</p>
+                    </div>
+                </div>
+
+
             </a>
-
-
         </div>
+
+    </div>
+
+    <!-- audio button -->
+    <audio id="track">
+        <source src="../audio/chillout-music-part-2-164792.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="player-container" class="home-audio">
+        <div id="play-pause" class="play"><i class="fas fa-play"></i></div>
     </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2023 Impulse Control. All rights reserved.</p>
+        <p>Images designed by Freepik</p>
     </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="script.js"></script>
+<script src="./JS/meditation.js"></script>
 
 </html>
