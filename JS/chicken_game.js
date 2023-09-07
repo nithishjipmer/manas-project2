@@ -1,6 +1,6 @@
 const RIGHT_HEN_SRC = "../images/chicken_left.png";
 const LEFT_HEN_SRC = "../images/chicken_right.png";
-const INVERSION_PROBABLITY = 0.25;
+const INVERSION_PROBABLITY = 0.5;
 const HEN_DISPLAY_TIME = 1000;
 const MINIMUM_DISPLAY_TIME = 400;
 const FEEDBACK_DISPLAY_TIME = 200;
@@ -12,9 +12,38 @@ const feedbackContainer = document.getElementById("feedback-container");
 const yesbtn = document.getElementsByClassName("answer-btn")[0];
 const nobtn = document.getElementsByClassName("answer-btn")[1];
 
-var hensNotSame = false;
 var score = 0;
 var lives = 3;
+
+
+function startGame() {
+  yesbtn.style.display = "inline";
+  nobtn.style.display = "inline";
+  // Start the timer
+  progress(60, TOTAL_TIME, document.getElementById("progressBar"));
+
+  tryInvertHen();
+  setTimeout(askQuestion, 2000);
+}
+
+function isEqual() {
+  const rightElements = document.querySelectorAll(".right");
+  const rightSrcList = Array.from(rightElements).map((element) =>
+    element.getAttribute("src")
+  );
+  const leftElements = document.querySelectorAll(".left");
+  const leftSrcList = Array.from(leftElements).map((element) =>
+    element.getAttribute("src")
+  );
+  const areListsEqual =
+    JSON.stringify(rightSrcList) === JSON.stringify(leftSrcList);
+
+  if (areListsEqual) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function tryInvertHen() {
   // Probablity to invert
@@ -27,7 +56,6 @@ function tryInvertHen() {
       invertOneHenCol();
     }
   } else {
-    hensNotSame = false;
     randomImg = imageList[Math.floor(Math.random() * imageList.length)];
     images.forEach(function (image) {
       image.src = randomImg;
@@ -45,16 +73,12 @@ function invertOneHen() {
   } else {
     randomHen.src = RIGHT_HEN_SRC;
   }
-  hensNotSame = true;
 }
 
 function invertOneHenCol() {
   randomImg1 = imageList[Math.floor(Math.random() * imageList.length)];
   randomImg2 = imageList[Math.floor(Math.random() * imageList.length)];
-  console.log(randomImg1);
-  console.log(randomImg2);
   images.forEach(function (image) {
-    console.log(image.className);
     if (image.className == "right") {
       image.src = randomImg1;
     } else {
@@ -62,23 +86,9 @@ function invertOneHenCol() {
     }
     image.style.display = "block";
   });
-
-  if (randomImg1 == randomImg2) {
-    hensNotSame = false;
-  } else {
-    hensNotSame = true;
-  }
 }
 
-function startGame() {
-  yesbtn.style.display = "inline";
-  nobtn.style.display = "inline";
-  // Start the timer
-  progress(60, TOTAL_TIME, document.getElementById("progressBar"));
 
-  tryInvertHen();
-  setTimeout(askQuestion, 2000);
-}
 
 function resetGame() {
   location.reload();
@@ -102,7 +112,7 @@ function loopGame() {
   if (timeoutId) {
     clearTimeout(timeoutId);
   }
-  timeoutId = setTimeout(askQuestion, 1000);
+  timeoutId = setTimeout(askQuestion, 2000);
 }
 
 function askQuestion() {
@@ -121,7 +131,9 @@ function showImages(shouldShow) {
 function answer(response) {
   yesbtn.style.display = "none";
   nobtn.style.display = "none";
-  if (!response == hensNotSame) {
+  var isSame = isEqual();
+  console.log(isSame)
+  if (response == isSame) {
     // answer correct
     score += 10;
     showFeedbackSymbol(true);
@@ -141,7 +153,6 @@ function updateScreen() {
 }
 
 function removeLife() {
-  console.log(lives);
   if (lives >= 0) {
     const heartIcons = document.querySelectorAll(".heart-icon");
     heartIcons[lives].classList.add("lost-life");
@@ -197,7 +208,7 @@ function showFeedbackSymbol(response) {
     feedbackContainer.classList.remove("tick-symbol");
     feedbackContainer.setAttribute("style", "display: none");
 
-    if (lives > 0) {
+    if (lives > 0 && isEqual()) {
       loopGame();
       yesbtn.style.display = "inline";
       nobtn.style.display = "inline";
