@@ -15,7 +15,6 @@ const nobtn = document.getElementsByClassName("answer-btn")[1];
 var score = 0;
 var lives = 3;
 
-
 function startGame() {
   yesbtn.style.display = "inline";
   nobtn.style.display = "inline";
@@ -88,18 +87,8 @@ function invertOneHenCol() {
   });
 }
 
-
-
 function resetGame() {
   location.reload();
-}
-
-function returnDisplayTime() {
-  let delta = HEN_DISPLAY_TIME - 2000 / secondsLeft;
-  if (HEN_DISPLAY_TIME > 2000 / secondsLeft + MINIMUM_DISPLAY_TIME) {
-    return delta;
-  }
-  return MINIMUM_DISPLAY_TIME;
 }
 
 let timeoutId;
@@ -112,7 +101,7 @@ function loopGame() {
   if (timeoutId) {
     clearTimeout(timeoutId);
   }
-  timeoutId = setTimeout(askQuestion, 2000);
+  timeoutId = setTimeout(askQuestion, 1500);
 }
 
 function askQuestion() {
@@ -132,7 +121,7 @@ function answer(response) {
   yesbtn.style.display = "none";
   nobtn.style.display = "none";
   var isSame = isEqual();
-  console.log(isSame)
+  console.log(isSame);
   if (response == isSame) {
     // answer correct
     score += 10;
