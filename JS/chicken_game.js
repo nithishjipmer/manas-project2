@@ -14,6 +14,7 @@ const nobtn = document.getElementsByClassName("answer-btn")[1];
 
 var score = 0;
 var lives = 3;
+var timeUp = false;
 
 function startGame() {
   yesbtn.style.display = "inline";
@@ -91,6 +92,21 @@ function resetGame() {
   location.reload();
 }
 
+function returnDuration() {
+  if (200 > score) {
+    return 1200;
+  } else if (300 > score) {
+    return 1000;
+  } else if (350 > score) {
+    return 700;
+  } else if (score > 350) {
+    return 600;
+  } else {
+    // score < 100
+    return 1500;
+  }
+}
+
 let timeoutId;
 
 function loopGame() {
@@ -101,7 +117,9 @@ function loopGame() {
   if (timeoutId) {
     clearTimeout(timeoutId);
   }
-  timeoutId = setTimeout(askQuestion, 1500);
+  let duration = returnDuration();
+  console.log(duration);
+  timeoutId = setTimeout(askQuestion, duration);
 }
 
 function askQuestion() {
@@ -121,7 +139,6 @@ function answer(response) {
   yesbtn.style.display = "none";
   nobtn.style.display = "none";
   var isSame = isEqual();
-  console.log(isSame);
   if (response == isSame) {
     // answer correct
     score += 10;
@@ -197,7 +214,7 @@ function showFeedbackSymbol(response) {
     feedbackContainer.classList.remove("tick-symbol");
     feedbackContainer.setAttribute("style", "display: none");
 
-    if (lives > 0 && isEqual()) {
+    if (lives > 0 && !timeUp) {
       loopGame();
       yesbtn.style.display = "inline";
       nobtn.style.display = "inline";
@@ -228,6 +245,7 @@ function progress(timeleft, timetotal, element) {
       progress(timeleft - 1, timetotal, element);
     }, 1000);
   } else {
+    timeUp = true;
     gameOver();
   }
 }
