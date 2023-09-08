@@ -48,7 +48,7 @@ function isEqual() {
 function tryInvertHen() {
   // Probablity to invert
   if (Math.random() < INVERSION_PROBABLITY) {
-    if (Math.random() > 0.5) {
+    if (Math.random() > 0.3) {
       // Invert one hen
       invertOneHen();
     } else {

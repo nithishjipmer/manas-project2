@@ -900,6 +900,19 @@ footer p{
 	transition: 1s ease 0.3s;
 }
 
+.res-text {
+  font-size: medium;
+}
+
+#how-to-play-msg {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
 /* ==================== Read about Impulse control ========================== */
 
 .read-page-container {

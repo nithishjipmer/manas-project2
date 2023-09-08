@@ -52,7 +52,7 @@
     <!-- User Feedback -->
     <div id="feedback-container" style="display: none;"></div>
 
-    
+
 
     <!-- Question container -->
     <!-- <div id="question-container">
@@ -87,6 +87,43 @@
             </button>
         </div>
 
+        <!-- Button trigger modal -->
+        <a id="how-to-play-msg" data-toggle="modal" data-target="#exampleModalLong">
+            How to play?
+        </a>
+
+
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Same-or-not Game</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol>
+                        <li>Two sets of three chicken images will shown on left and right side of the screen for a brief
+                            period of time</li>
+                        <li>Then the user has to decide whether the group of images on the right is exactly same as left
+                            or
+                            not and choose the options accordingly</li>
+                        <li>Each correct answer fetches 10 points and wrong answer costs a life</li>
+                        <li>The game ends in one minute or when 3 lives are lost (whichever occurs first)</li>
+                    </ol>
+                    <h5>Same</h5>
+                    <img style="width: 100%;" src="../images/tutorial-same.png" alt="">
+                    <br><br><br>
+                    <h5>Not same</h5>
+                    <img style="width: 100%;" src="../images/tutorial-notsame.png" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="../JS/chicken_game.js"></script>

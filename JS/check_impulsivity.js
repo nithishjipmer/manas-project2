@@ -192,11 +192,11 @@ var quizApp = function () {
       }
       return this.showResult(this.score);
     }
+    this.showResult(this.score);
   };
 
   this.showResult = function (scr) {
     const maxScore = totalque * 5;
-    const percentage = (scr / maxScore) * 100;
     let impulsivityLevel;
     let resultImage;
 
