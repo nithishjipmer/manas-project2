@@ -192,7 +192,7 @@ var quizApp = function () {
       }
       return this.showResult(this.score);
     }
-    this.showResult(this.score);
+    // this.showResult(this.score);
   };
 
   this.showResult = function (scr) {
