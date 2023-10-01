@@ -165,7 +165,7 @@ function populateBubbles() {
     const bubble = document.createElement("div");
     bubble.classList.add(
       "bubble",
-      entry.stillWant ? "true-bubble" : "false-bubble"
+      !entry.stillWant ? "true-bubble" : "false-bubble"
     );
     const formattedTimestamp = new Date(entry.timestamp).toLocaleDateString(
       "en-US",
