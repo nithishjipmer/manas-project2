@@ -171,8 +171,41 @@ green #A8CF58
 
             </a>
         </div>
-
+        
     </div>
+
+    <div id="impulse-log-section" class="container">
+        <h2>Your Impulse Log</h2>
+        <br>
+        <div class="bubble-container" id="bubbleContainer">
+            <!-- Bubbles will be added here dynamically -->
+        </div>
+    </div>
+
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Same-or-not Game</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Instructions and images here -->\
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="deleteEntryButton">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
 
     <!-- audio button -->
     <audio id="track">
@@ -189,6 +222,8 @@ green #A8CF58
     </footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script src="script.js"></script>
 <script src="./JS/meditation.js"></script>
 

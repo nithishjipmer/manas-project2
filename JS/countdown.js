@@ -3,7 +3,6 @@ const questionsDiv = document.getElementById("countdown-questions");
 const impulseInput = document.getElementById("impulseInput");
 const stillWantInput = document.getElementById("stillWantInput");
 const consequencesInput = document.getElementById("consequencesInput");
-const submitButton = document.getElementById("submitButton");
 
 startButton.addEventListener("click", startTimer);
 
@@ -11,33 +10,72 @@ function showQuestions() {
   questionsDiv.style.display = "block";
 }
 
-submitButton.addEventListener("click", submitAnswers);
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
+
+let stillWant = null;
+
+// Add click event listeners to the Yes and No buttons
+yesButton.addEventListener("click", function () {
+  stillWant = true;
+  submitAnswers();
+});
+
+noButton.addEventListener("click", function () {
+  stillWant = false;
+  submitAnswers();
+});
 
 function submitAnswers() {
   const impulse = impulseInput.value;
-  const stillWant = stillWantInput.value;
   const consequences = consequencesInput.value;
 
   startButton.disabled = false;
   impulseInput.value = "";
-  stillWantInput.value = "";
   consequencesInput.value = "";
-  questionsDiv.style.display = "none";
 
   const messageElement = document.createElement("div");
-  messageElement.classList.add('text-center')
+  messageElement.classList.add("text-center");
   messageElement.innerHTML =
     "<h4>Take a Pause and Make Informed Choices</h4>" +
-    "<p>Congratulations on taking a moment to reflect on your impulses! Remember, the power to make informed choices lies within you. Take a pause, consider the consequences, and make decisions that align with your goals and values. Your ability to control impulses is a step toward personal growth and well-being. Keep up the great work!</p>" +
-    "<a href='../index.html'><button class='btn btn-success'>Home</button></a>";
+    "<p> Remember, the power to make informed choices lies within you. Take a pause, consider the consequences, and make decisions that align with your goals and values.</p>" +
+    "<br>" +
+    "<a href='../index.html#impulse-log-section'><button class='btn btn-success'>Home</button></a>";
 
+  if (impulse == "" || consequences == "") {
+    return;
+  }
+
+  addEntry(impulse, consequences, stillWant);
+
+  questionsDiv.style.display = "none";
   document
     .getElementsByClassName("countdown-card")[0]
     .appendChild(messageElement);
 }
 
+
+function addEntry(string1, string2, booleanValue) {
+  const timestamp = new Date().toISOString();
+
+  const entry = {
+    impulse: string1,
+    consequences: string2,
+    stillWant: booleanValue,
+    timestamp: timestamp,
+  };
+
+
+  let entries = JSON.parse(localStorage.getItem("myEntries")) || [];
+
+  entries.push(entry);
+
+  localStorage.setItem("myEntries", JSON.stringify(entries));
+}
+
+
 const FULL_DASH_ARRAY = 283;
-const TIME_LIMIT = 30;
+const TIME_LIMIT = 60;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -119,9 +157,9 @@ function setCircleDasharray() {
 }
 
 function simpleToast() {
-  var x = document.getElementById("simpleToast");
-  x.className = "show";
-  setTimeout(function () {
-    x.className = x.className.replace("show", "");
-  }, 3000);
+  // var x = document.getElementById("simpleToast");
+  // x.className = "show";
+  // setTimeout(function () {
+  //   x.className = x.className.replace("show", "");
+  // }, 3000);
 }

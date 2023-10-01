@@ -150,3 +150,75 @@ jQuery(document).ready(function ($) {
     $("#tools_wrap").slideToggle("slow");
   });
 });
+
+// table
+function getAllEntries() {
+  const entries = JSON.parse(localStorage.getItem("myEntries")) || [];
+  return entries;
+}
+
+function populateBubbles() {
+  const entries = getAllEntries();
+  const bubbleContainer = document.getElementById("bubbleContainer");
+
+  for (const entry of entries) {
+    const bubble = document.createElement("div");
+    bubble.classList.add(
+      "bubble",
+      entry.stillWant ? "true-bubble" : "false-bubble"
+    );
+    const formattedTimestamp = new Date(entry.timestamp).toLocaleDateString(
+      "en-US",
+      {
+        month: "long",
+        day: "numeric",
+      }
+    );
+
+    const textElement = document.createElement("span");
+    textElement.classList.add("bubble-text");
+    textElement.textContent = formattedTimestamp;
+    bubble.appendChild(textElement);
+
+    // Attach a click event listener to each bubble
+    bubble.addEventListener("click", function () {
+      // Populate the modal with entry details
+      const modalTitle = document.querySelector(
+        "#exampleModalLong .modal-title"
+      );
+      modalTitle.textContent = formattedTimestamp;
+
+      const modalBody = document.querySelector("#exampleModalLong .modal-body");
+      modalBody.innerHTML = `
+                <p><strong>Impulse:</strong> ${entry.impulse}</p>
+                <p><strong>Consequences:</strong> ${entry.consequences}</p>
+            `;
+
+      const entryIndexToDelete = entries.indexOf(entry);
+
+      // Handle DELETE button click
+      document
+        .querySelector("#deleteEntryButton")
+        .addEventListener("click", function () {
+          // Remove the entry from local storage by index
+          entries.splice(entryIndexToDelete, 1);
+          localStorage.setItem("myEntries", JSON.stringify(entries));
+
+          // Close the modal
+          $("#exampleModalLong").modal("hide");
+
+          // Refresh the bubbles after deletion
+          bubbleContainer.innerHTML = "";
+          populateBubbles();
+        });
+
+      // Open the Bootstrap modal when a bubble is clicked
+      $("#exampleModalLong").modal("show");
+    });
+
+    // Append the bubble to the container
+    bubbleContainer.appendChild(bubble);
+  }
+}
+
+populateBubbles();
