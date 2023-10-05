@@ -13,7 +13,7 @@ const yesbtn = document.getElementsByClassName("answer-btn")[0];
 const nobtn = document.getElementsByClassName("answer-btn")[1];
 
 var score = 0;
-var lives = 3;
+var lives = 1;
 var timeUp = false;
 
 function startGame() {
