@@ -1,6 +1,6 @@
 const RIGHT_HEN_SRC = "../images/chicken_left.png";
 const LEFT_HEN_SRC = "../images/chicken_right.png";
-const INVERSION_PROBABLITY = 0.25;
+const INVERSION_PROBABLITY = 0.4;
 const HEN_DISPLAY_TIME = 1000;
 const MINIMUM_DISPLAY_TIME = 400;
 const FEEDBACK_DISPLAY_TIME = 200;
